@@ -1,4 +1,8 @@
 services:
+  marketplace:
+    image: white-marketplace
+    networks:
+      - mp-local
   db:
     image: postgres:16.4
     volumes:

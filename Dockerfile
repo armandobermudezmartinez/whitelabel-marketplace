@@ -25,4 +25,4 @@ RUN asdf install
 
 RUN chmod +x bin/setup
 
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["tail", "-f", "/dev/null"]
