@@ -1,5 +1,3 @@
-version: "3"
-
 services:
   db:
     image: postgres:16.4
@@ -14,7 +12,8 @@ services:
       POSTGRES_USER: ${DB_POSTGRES_USER:-mp}
       POSTGRES_PASSWORD: ${DB_POSTGRES_PASSWORD:-mp}
   el:
-    image: arm64v8/elasticsearch:7.8.0
+    image: elasticsearch:7.8.0
+    platform: linux/amd64
     ports:
       - "127.0.0.1:9200:9200"
       - "127.0.0.1:9300:9300"
@@ -23,7 +22,8 @@ services:
     environment:
       discovery.type: single-node
   redis:
-    image: arm64v8/redis:7.2.4
+    image: redis:7.2.4
+    platform: linux/amd64
     ports:
       - "127.0.0.1:6379:6379"
     networks:
