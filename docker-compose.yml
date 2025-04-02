@@ -1,6 +1,6 @@
 services:
   marketplace:
-    image: white-marketplace
+    image: marketplace
     networks:
       - mp-local
   db:
