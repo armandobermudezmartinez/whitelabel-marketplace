@@ -6,6 +6,11 @@ RUN apt update && apt install -y git curl vim \
     tar gpg gcc imagemagick \
     make zlib1g zlib1g-dev libffi-dev libyaml-dev
 
+RUN apt update && apt install -y git curl vim \
+    tar gpg gcc imagemagick \
+    make zlib1g zlib1g-dev libffi-dev libyaml-dev \
+    libpq-dev 
+
 RUN git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.15.0 && \
     export ASDF_DIR=$HOME/.asdf && \
     . $HOME/.asdf/asdf.sh 
