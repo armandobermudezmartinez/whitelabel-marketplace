@@ -3,6 +3,10 @@ services:
     image: marketplace
     environment:
       SECRET_KEY_BASE: "secret_key_base"
+      MP_DATABASE_HOST: db
+      MP_DATABASE_USERNAME: mp
+      MP_DATABASE_PASSWORD: mp
+      MP_DATABASE_NAME: mp_development
     networks:
       - mp-local
   db:
