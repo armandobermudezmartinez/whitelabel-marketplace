@@ -1,5 +1,7 @@
 services:
   marketplace:
+    build:
+      context: .
     image: marketplace
     environment:
       SECRET_KEY_BASE: "secret_key_base"
