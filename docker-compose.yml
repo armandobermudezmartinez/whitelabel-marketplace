@@ -1,7 +1,7 @@
 services:
   marketplace:
-    build:
-      context: .
+    # build:
+    #   context: .
     image: marketplace
     environment:
       SECRET_KEY_BASE: "secret_key_base"
@@ -15,13 +15,12 @@ services:
       IMPORTER_AAI_REFRESH_TOKEN: "refresh-token"
       IMPORTER_AAI_CLIENT_ID: "client-id"
       # ROOT_URL: "http://0.0.0.0:5000"
-      HOST: "0.0.0.0"
       PORT: "5000"
     ports:
       - "5000:5000"
     networks:
       - mp-local
-    entrypoint: ["/bin/sh", "-c", "./bin/setup && echo 'Setup complete' && tail -f /dev/null"]
+    entrypoint: ["./entrypoint.sh"]
   db:
     image: postgres:16.4
     volumes:

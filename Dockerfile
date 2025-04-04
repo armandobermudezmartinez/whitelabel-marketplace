@@ -29,4 +29,6 @@ RUN asdf install
 
 RUN chmod +x bin/setup
 
+RUN chmod +x entrypoint.sh
+
 EXPOSE 5000
