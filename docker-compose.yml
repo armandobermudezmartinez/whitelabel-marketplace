@@ -12,6 +12,9 @@ services:
       IMPORTER_AAI_BASE_URL: "https://your-aai-base-url.com"
       IMPORTER_AAI_REFRESH_TOKEN: "refresh-token"
       IMPORTER_AAI_CLIENT_ID: "client-id"
+      # ROOT_URL: "http://0.0.0.0:5000"
+      HOST: "0.0.0.0"
+      PORT: "5000"
     ports:
       - "5000:5000"
     networks:
@@ -56,4 +59,5 @@ volumes:
 
 networks:
   mp-local:
+    driver: bridge
 
