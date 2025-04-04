@@ -1,23 +1,8 @@
 services:
   marketplace:
-    # build:
-    #   context: .
     image: marketplace
     env_file:
       - ./.env
-    # environment:
-    #   SECRET_KEY_BASE: "secret_key_base"
-    #   MP_DATABASE_HOST: db
-    #   MP_DATABASE_USERNAME: mp
-    #   MP_DATABASE_PASSWORD: mp
-    #   MP_DATABASE_NAME: mp_development
-    #   REDIS_URL: redis://redis:6379/0
-    #   ELASTICSEARCH_URL: http://el:9200
-    #   IMPORTER_AAI_BASE_URL: "https://your-aai-base-url.com"
-    #   IMPORTER_AAI_REFRESH_TOKEN: "refresh-token"
-    #   IMPORTER_AAI_CLIENT_ID: "client-id"
-    #   PORT: "5000"
-      ## ROOT_URL: "http://0.0.0.0:5000"
     ports:
       - "5000:5000"
     networks:
