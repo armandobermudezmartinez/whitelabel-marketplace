@@ -7,6 +7,7 @@ services:
       MP_DATABASE_USERNAME: mp
       MP_DATABASE_PASSWORD: mp
       MP_DATABASE_NAME: mp_development
+      REDIS_URL: redis://localhost:6379/0
     networks:
       - mp-local
   db:
