@@ -1,6 +1,8 @@
 services:
   marketplace:
     image: marketplace
+    environment:
+      SECRET_KEY_BASE: "secret_key_base"
     networks:
       - mp-local
   db:

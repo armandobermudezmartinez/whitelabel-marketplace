@@ -6,10 +6,7 @@ RUN apt update && apt install -y git curl vim \
     tar gpg gcc imagemagick \
     make zlib1g zlib1g-dev libffi-dev libyaml-dev
 
-RUN apt update && apt install -y git curl vim \
-    tar gpg gcc imagemagick \
-    make zlib1g zlib1g-dev libffi-dev libyaml-dev \
-    libpq-dev 
+RUN apt update && apt install -y libpq-dev 
 
 RUN git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.15.0 && \
     export ASDF_DIR=$HOME/.asdf && \
@@ -29,5 +26,7 @@ RUN asdf plugin-add yarn && asdf install yarn latest
 RUN asdf install
 
 RUN chmod +x bin/setup
+
+RUN export SECRET_KEY_BASE="secret_key_base"
 
 ENTRYPOINT ["tail", "-f", "/dev/null"]
