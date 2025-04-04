@@ -7,9 +7,16 @@ services:
       MP_DATABASE_USERNAME: mp
       MP_DATABASE_PASSWORD: mp
       MP_DATABASE_NAME: mp_development
-      REDIS_URL: redis://localhost:6379/0
+      REDIS_URL: redis://redis:6379/0
+      ELASTICSEARCH_URL: http://el:9200
+      IMPORTER_AAI_BASE_URL: "https://your-aai-base-url.com"
+      IMPORTER_AAI_REFRESH_TOKEN: "refresh-token"
+      IMPORTER_AAI_CLIENT_ID: "client-id"
+    ports:
+      - "5000:5000"
     networks:
       - mp-local
+    entrypoint: ["/bin/sh", "-c", "./bin/setup && echo 'Setup complete' && tail -f /dev/null"]
   db:
     image: postgres:16.4
     volumes:

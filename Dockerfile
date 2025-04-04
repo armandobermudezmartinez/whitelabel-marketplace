@@ -26,7 +26,3 @@ RUN asdf plugin-add yarn && asdf install yarn latest
 RUN asdf install
 
 RUN chmod +x bin/setup
-
-RUN export SECRET_KEY_BASE="secret_key_base"
-
-ENTRYPOINT ["tail", "-f", "/dev/null"]
