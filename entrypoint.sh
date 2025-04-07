@@ -1,12 +1,23 @@
 #!/bin/sh
 
-# Clear Rails cache
-bin/rails tmp:clear
-
 # Setup the application
 ./bin/setup
 
-echo 'Setup complete, starting server...'
+echo 'Setup complete, starting Rails server...'
 
-# Start the Rails server
-./bin/server
+# Start the Rails server in the background
+./bin/server &
+
+# Wait for Rails server to be fully up (using the dynamic port)
+echo "Waiting for Rails server to be up on port ${PORT:-5000}..."
+until curl --silent --head http://localhost:${PORT:-5000} | grep "200 OK" > /dev/null; do
+    echo "Waiting for Rails server to be ready..."
+    sleep 1
+done
+
+# Now run the CSS build after the server is up
+echo 'Rails server is up, running CSS build...'
+yarn build:css
+
+# Keep the container running (optional, if you need to keep it alive)
+wait
