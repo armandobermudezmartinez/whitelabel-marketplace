@@ -1,13 +1,15 @@
 services:
   marketplace:
     image: marketplace
+    volumes:
+      - ./entrypoint.sh:/root/whitelabel-marketplace/entrypoint.sh
     ports:
       - "5000:5000"
     networks:
       - mp-local
     env_file:
       - ./.env
-    entrypoint: ["./entrypoint.sh"]
+    entrypoint: ["/root/whitelabel-marketplace/entrypoint.sh"]
   db:
     image: postgres:16.4
     volumes:
