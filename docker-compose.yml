@@ -1,12 +1,12 @@
 services:
   marketplace:
     image: marketplace
-    env_file:
-      - ./.env
     ports:
       - "5000:5000"
     networks:
       - mp-local
+    env_file:
+      - ./.env
     entrypoint: ["./entrypoint.sh"]
   db:
     image: postgres:16.4
@@ -48,4 +48,3 @@ volumes:
 networks:
   mp-local:
     driver: bridge
-
