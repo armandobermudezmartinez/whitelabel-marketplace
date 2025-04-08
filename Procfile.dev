@@ -1,6 +1,0 @@
-web: bundle exec rails s -b 0.0.0.0 -p ${PORT:-5000}
-js: yarn build --watch
-css: yarn build:css --watch
-
-jobs: bundle exec sidekiq -q active_storage_analysis -q active_storage_purge -q pc_subscriber -q orders -q mailers -q reports -q probes -q default -q pc_publisher -q ess_update
-
