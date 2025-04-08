@@ -1,6 +1,6 @@
 services:
   marketplace:
-    image: marketplace
+    image: bermudea/marketplace
     volumes:
       - ./entrypoint.sh:/root/whitelabel-marketplace/entrypoint.sh
     ports:
