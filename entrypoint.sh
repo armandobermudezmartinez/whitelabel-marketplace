@@ -15,9 +15,10 @@ until curl --silent --head http://localhost:${PORT:-5000} | grep "200 OK" > /dev
     sleep 1
 done
 
-# Now run the CSS build after the server is up
-echo 'Rails server is up, running CSS build...'
+echo 'Rails server is up, running CSS build ...'
 yarn build:css
 
-# Keep the container running (optional, if you need to keep it alive)
+echo 'Loading vacabularies ...'
+rake rdt:add_vocabularies
+
 wait
