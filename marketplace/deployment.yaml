@@ -98,6 +98,8 @@ spec:
             - mountPath: /root/whitelabel-marketplace/entrypoint.sh
               name: marketplace-cm0
               subPath: entrypoint.sh
+            - name: css-build
+              mountPath: /root/whitelabel-marketplace/app/assets/builds/
       restartPolicy: Always
       volumes:
         - configMap:
@@ -107,3 +109,5 @@ spec:
             name: marketplace-cm0
             defaultMode: 0755
           name: marketplace-cm0
+        - name: css-build
+          emptyDir: {}

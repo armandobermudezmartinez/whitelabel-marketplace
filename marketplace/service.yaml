@@ -13,4 +13,5 @@ spec:
     - name: "5000"
       port: 5000
       targetPort: 5000
+  type: ClusterIP
 
