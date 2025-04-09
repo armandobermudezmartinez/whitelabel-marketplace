@@ -8218,6 +8218,7 @@ abbr[title] {
         width: 160px;
         height: 57px;
         background: url("white-label-logo.png") center no-repeat;
+        background-size: contain;  // Ensures the logo is fully visible and scaled proportionally
         display: block;
       }
     }
