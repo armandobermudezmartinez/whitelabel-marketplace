@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   annotations:
     kompose.cmd: kompose convert
-    kompose.version: 1.34.0 (cbf2835db)
   labels:
     io.kompose.service: marketplace
   name: marketplace
@@ -18,7 +17,6 @@ spec:
     metadata:
       annotations:
         kompose.cmd: kompose convert
-        kompose.version: 1.34.0 (cbf2835db)
       labels:
         io.kompose.service: marketplace
     spec:

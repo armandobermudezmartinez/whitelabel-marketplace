@@ -3,14 +3,14 @@ kind: Service
 metadata:
   annotations:
     kompose.cmd: kompose convert
-    kompose.version: 1.34.0 (cbf2835db)
   labels:
     io.kompose.service: marketplace
   name: marketplace
 spec:
+  selector:
+    io.kompose.service: marketplace
   ports:
     - name: "5000"
       port: 5000
       targetPort: 5000
-  selector:
-    io.kompose.service: marketplace
+
