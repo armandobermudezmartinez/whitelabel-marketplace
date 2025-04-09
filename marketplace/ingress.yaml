@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: marketplace
+  namespace: default
+  labels:
+    io.kompose.service: marketplace
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: 16m
+    nginx.org/client-max-body-size: 16m
+spec:
+  rules:
+    - host: "localhost"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: marketplace
+                port:
+                  number: 5000
