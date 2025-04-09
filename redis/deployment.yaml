@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   annotations:
     kompose.cmd: kompose convert
-    kompose.version: 1.34.0 (cbf2835db)
   labels:
     io.kompose.service: redis
   name: redis
@@ -16,7 +15,6 @@ spec:
     metadata:
       annotations:
         kompose.cmd: kompose convert
-        kompose.version: 1.34.0 (cbf2835db)
       labels:
         io.kompose.service: redis
     spec:
