@@ -1,10 +1,10 @@
 apiVersion: v1
 data:
-  CHECKIN_HOST: desy.de
-  CHECKIN_IDENTIFIER: eosc-beyond-mp
-  CHECKIN_ISSUER_URI: https://keycloak.desy.de/auth/realms/testing
+  CHECKIN_HOST: host.de
+  CHECKIN_ISSUER_URI: https://checkin.issuer.com/auth/realms/testing
+  CHECKIN_SECRET: checkin_secret
+  CHECKIN_IDENTIFIER: checkin_identifier
   CHECKIN_SCOPE: email,openid,profile
-  CHECKIN_SECRET: 8Hwh5fMksjzeT155AaA8Mizz5EAlhGlR
   ELASTICSEARCH_URL: http://el:9200
   MP_DATABASE_HOST: db
   MP_DATABASE_NAME: mp_development
