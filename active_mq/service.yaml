@@ -13,4 +13,4 @@ spec:
     - name: "61613"
       port: 61613
       targetPort: 61613
-
+  type: ClusterIP

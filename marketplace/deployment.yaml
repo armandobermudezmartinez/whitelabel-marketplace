@@ -105,4 +105,5 @@ spec:
               - key: entrypoint.sh
                 path: entrypoint.sh
             name: marketplace-cm0
+            defaultMode: 0755
           name: marketplace-cm0
