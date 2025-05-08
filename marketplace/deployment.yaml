@@ -98,6 +98,9 @@ spec:
             - mountPath: /root/whitelabel-marketplace/entrypoint.sh
               name: marketplace-cm0
               subPath: entrypoint.sh
+            - mountPath: /root/whitelabel-marketplace/app/assets/images/white-label-logo.png
+              name: logo
+              subPath: white-label-logo.png
       restartPolicy: Always
       volumes:
         - configMap:
@@ -107,3 +110,6 @@ spec:
             name: marketplace-cm0
             defaultMode: 0755
           name: marketplace-cm0
+        - name: logo
+          configMap:
+            name: logo
